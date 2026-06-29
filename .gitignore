@@ -13,7 +13,7 @@ dist
 .env
 .env.local
 .env.production
-
+.vercel
 # logs
 npm-debug.log*
 yarn-debug.log*
