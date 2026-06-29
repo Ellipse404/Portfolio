@@ -12,13 +12,12 @@ import {
   Atom,
   BadgeCheck,
   Boxes,
-  Braces,
   Code2,
+  ExternalLink,
   FileCode2,
   FileJson2,
   GitBranch,
-  Github,
-  Gitlab,
+  GitFork,
   Globe2,
   KeyRound,
   Layers3,
@@ -26,14 +25,12 @@ import {
   Palette,
   Rocket,
   Server,
-  ShieldCheck,
   Smartphone,
   TestTube2,
   Users,
   Workflow,
   Zap,
-  ExternalLink,
-  type LucideIcon,
+  type LucideIcon
 } from "lucide-react";
 
 type Project = {
@@ -143,9 +140,9 @@ const skillIcons: Record<string, LucideIcon> = {
   Vitest: TestTube2,
 
   Git: GitBranch,
-  GitHub: Github,
+  GitHub: GitFork,
   Bitbucket: GitBranch,
-  GitLab: Gitlab,
+  GitLab: GitFork,
   "Azure DevOps": Workflow,
   JIRA: Workflow,
   ClickUp: Workflow,
@@ -392,7 +389,7 @@ function CursorGlow() {
   );
 }
 
-function SectionLabel({ eyebrow, title }: { eyebrow: string; title: string }) {
+function SectionLabel({ eyebrow, title }: { eyebrow: string; title?: string }) {
   return (
     <div className="mb-10">
       <p className="text-sm font-semibold uppercase tracking-[0.32em] text-amber-300/90">
