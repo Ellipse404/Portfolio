@@ -721,7 +721,7 @@ export default function Home() {
             </a>
           </div>
           <a
-            href="/bhaskar-neogi-cv.pdf"
+            href="/cv_bhaskar_neogi.pdf"
             download
             className="rounded-full bg-white px-4 py-2 text-sm font-bold text-black transition hover:bg-amber-200"
           >
