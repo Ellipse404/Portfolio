@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --bg: #05030a;
+  --panel: rgba(18, 13, 31, 0.74);
+  --line: rgba(255, 255, 255, 0.1);
+  --violet: #a855f7;
+  --amber: #f59e0b;
+  --pink: #ec4899;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(168, 85, 247, 0.18), transparent 32rem),
+    radial-gradient(circle at 80% 10%, rgba(245, 158, 11, 0.14), transparent 28rem),
+    radial-gradient(circle at 70% 70%, rgba(236, 72, 153, 0.12), transparent 26rem),
+    #05030a;
+  color: #f8fafc;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(245, 158, 11, 0.35);
+  color: #fff7ed;
+}
+
+.noise::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.075;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, black, transparent 82%);
+}
+
+.glass-card {
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.035));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 24px 80px rgba(0,0,0,0.26);
+  backdrop-filter: blur(20px);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #fff7ed 0%, #fbbf24 22%, #ec4899 58%, #a855f7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.aurora-border {
+  position: relative;
+  isolation: isolate;
+}
+
+.aurora-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(245,158,11,.8), rgba(236,72,153,.75), rgba(168,85,247,.8));
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  z-index: -1;
+}
+
+.card-tilt {
+  transform-style: preserve-3d;
+  transition: transform 280ms ease, border-color 280ms ease, background 280ms ease;
+}
+
+.card-tilt:hover {
+  transform: translateY(-8px) rotateX(3deg) rotateY(-3deg);
+  border-color: rgba(245, 158, 11, 0.38);
+  background: linear-gradient(145deg, rgba(245, 158, 11, 0.12), rgba(168, 85, 247, 0.08));
+}
+
+.marquee-mask {
+  mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
+}
+
+.timeline-line {
+  background: linear-gradient(to bottom, transparent, rgba(245,158,11,.75), rgba(236,72,153,.65), transparent);
+}
+
+.spotlight {
+  background: radial-gradient(500px circle at var(--x, 50%) var(--y, 50%), rgba(245,158,11,0.16), transparent 42%);
+}
